@@ -1,0 +1,28 @@
+{% extend Base.html %}
+ 
+
+
+{% block content %}
+
+<h2> Sign in </h2> 
+
+
+
+
+<img class = 'bg' src = "Pantry.jpg"/>
+  <div class="container">
+    <label><b>Username </b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <button type="submit" class="loginbtn"> Login </button>
+        
+  </div>
+
+  <div class="container" >
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">  <a href="#"> Wanna create an account?</a></span>
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,1 @@
+/**/Skype.onConfigurationLoaded_2({"pes_config":"https://static-asm.secure.skypeassets.com/pes/v1/configs/66a6960ad6344818aaffefea25101d9f/views/default"})

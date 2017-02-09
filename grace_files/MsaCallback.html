@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>Skype</title>
+
+    <script src="MsaCallback_data/HashFragment.js"></script>
+
+    <script type="text/javascript">
+        var message = "";
+        (function () {
+            var target = "https://outlook.live.com/owa/",
+                messageObject = {"state":"silentloginsdk_1486052733019","rps_token":"EgAMAgMAAAAEgAAADAABxD75eeQRnOgQaZe8GzVLc4ntgwtaFR9uC5akoXaLXW+77UMLNNtC/MyeEj+GInYSWSRkcow354guy8qMkenD/CUWHkN2pEYl2KELPHqtzRiqZ269dWGCimospQw/PpwU+Lu1h77pvLNyokGPC/ZPOOzeQ6xtCHMZw0Zj0h6Poy5ynURgaGfzs8hWAxQwD+NXL3+JRBozBydRBs7SKtZXZAnCgmLggtwL3QFOP3XH7/xvZFgh3jx6XjmS4+RnUL35L+5f5j1SSbOZ08l8tuBD+B9DvOYQUeFaKWt/s8EK7IcoMeZH4iDW0sdisBmZzMaEREiRoMG2UaNDGG2ci/LrPPsAdAD7AP2/BgBPSQiwfV2TWG9dk1iqeQQAChAgABAAAEAAAAAAAAAaSUwABTEwMDUyAAAztgQBAQAAkBtmQAAEQwAGR3JhY2V5AAdCYXRoaXNoAAAAAAAAAAAAAAAAAAAAAAAAUYJUefOJma0AAH1dk1hwBApZAAAAAAAAAAAAAAAADwA3OS4xODAuMTkwLjI0NAAFAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA/u9c75K+ZE4AAAAAAAAAAAAAAAAAAAAAAAAYAGZ1bm55LWdvZ28tQGhvdG1haWwuY29tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=","site_name":"lw.skype.com","skypetoken":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEyIn0.eyJpYXQiOjE0ODYwNTI3MzUsImV4cCI6MTQ4NjEzOTEzMywic2t5cGVpZCI6ImxpdmU6ZnVubnktZ29nby0iLCJzY3AiOjk1OCwiY3NpIjoiMiIsImNpZCI6ImYzODk5OWFkNTE4MjU0NzkiLCJhYXQiOjE0ODYwNTI3MTl9.ZeZVagjwbP_eKExreKterfYUndoLLvAehoz7OWjcGqLR2gpNXid22qxq0OkPPDGQ4PfGdjNwy418FQUf3i-QVno_UdHdRmyErQV0UHRt5SNmnE-Qggw4Nao942naWoyc5_gmhafHeBDjGzpv0wyU7zv3jFGJdw8mPjKOz4G2J_m_8yS57u7eMU11FnjsxK6SmVwf1cXdmxdYhh14","expires_in":"86398"};
+
+            window.hashFragment.parseHashParams();
+            var error = window.hashFragment.getHashParam("error");
+            var errorDescription = window.hashFragment.getHashParam("error_description");
+
+            if (!!error && error.length) {
+                messageObject.error = error;
+                messageObject.error_description = errorDescription;
+            }
+            
+            var message = JSON.stringify(messageObject);
+
+            if (!!window.opener) {                              // Send postMessage from a Popup and close window
+                window.opener.postMessage(message, target);
+                window.close();
+            } else if (!!window.parent) {                       // Send postMessage from an Iframe
+                window.parent.postMessage(message, target);
+            }
+        }());
+    </script>
+</head>
+<body>
+
+</body></html>
